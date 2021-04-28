@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+
+  web:
+    # Берем Dockerfile из каталога app
+    build: ./test
+    image: shureckweb
+    # Запускаем тестовый сервер
+    restart: always
+    
+    #command: python InstCat.py
+    # куда будут помещены данные из каталога app
+    # Открываем порт 8000 внутри и снаружи
+
+    volumes:
+        - ./test/:/usr/src/app/

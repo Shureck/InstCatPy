@@ -1,0 +1,2 @@
+0 8 * * * python /usr/src/app/InstCat.py >> /var/log/myjob.log
+# remember to end this file with an empty new line
