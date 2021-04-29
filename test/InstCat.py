@@ -1,11 +1,11 @@
-from instabot import Bot
+from myigbot import MyIGBot
 import os
 import shutil
 from PIL import Image
 import urllib3
 
-insta_username = ''
-insta_password = ''
+insta_username = '_lazy_programmer_'
+insta_password = '78RUIUne'
 
 def clean_up():
     dir = "config"
@@ -22,13 +22,6 @@ def clean_up():
         os.rename(remove_me, src)
 
 
-def upload_post():
-    bot = Bot()
-    bot.login(username=insta_username, password=insta_password)
-    bot.upload_photo("new_pic.png", caption="Just another cat")
-    bot.get_you_medias()
-
-
 clean_up()
 
 url = 'https://thiscatdoesnotexist.com/'
@@ -37,7 +30,6 @@ file = http.request('GET', url).data
 with open('new_pic.png','wb')as img:
     img.write(file)
 
-bot = Bot()
-bot.login(username=insta_username, password=insta_password)
-bot.upload_photo("new_pic.png", caption="Just another cat")
-bot.logout()
+bot = MyIGBot(insta_username, insta_password)
+response = bot.upload_post("new_pic.png", caption="Just another cat")
+print(response)
