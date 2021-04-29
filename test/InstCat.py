@@ -4,8 +4,8 @@ import shutil
 from PIL import Image
 import urllib3
 
-insta_username = '_lazy_programmer_'
-insta_password = '78RUIUne'
+insta_username = ''
+insta_password = ''
 
 def clean_up():
     dir = "config"
